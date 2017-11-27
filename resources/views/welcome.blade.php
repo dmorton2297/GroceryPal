@@ -46,7 +46,6 @@
 
     </head>
     <body>
-
         <div class="topnav" id="myTopnav">
             <a class="active" href="#home">Home</a>
             <a href="#news">Recipe Suggestions</a>
