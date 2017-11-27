@@ -7,88 +7,86 @@
 
         <title>Laravel</title>
 
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
+        <!-- Style -->
+        <style type="text/css">
+            /* Add a black background color to the top navigation */
+            .topnav {
+                background-color: #DCEDC8;
+                overflow: hidden;
             }
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
+            /* Style the links inside the navigation bar */
+            .topnav a {
+                float: left;
+                color: #000000;
                 text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
+                padding: 14px 16px;
                 text-decoration: none;
-                text-transform: uppercase;
+                font-size: 17px;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
+            /* Change the color of links on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Add a color to the active/current link */
+            .topnav a.active {
+                background-color: #4CAF50;
+                color: white;
             }
         </style>
+
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+        <div class="topnav" id="myTopnav">
+            <a class="active" href="#home">Home</a>
+            <a href="#news">Recipe Suggestions</a>
+        </div>
+        <div class="col-xs-6">
+            <h2 class="sub-header">Grocery List</h2>
+            <div class="table1">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Item</th>
+                        <th>Date Added</th>
+                    </tr>
+                    <tr>
+                        <td>Chicken</td>
+                        <td>May 30</td>
+                    </tr>
+                    <tr>
+                        <td>Chips</td>
+                        <td>June 30</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <div class="col-xs-6">
+            <h2 class="sub-header">Current Pantry</h2>
+            <div class="table2">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Item</th>
+                        <th>Date Added</th>
+                    </tr>
+                    <tr>
+                        <td>Chicken</td>
+                        <td>May 30</td>
+                    </tr>
+                    <tr>
+                        <td>Chips</td>
+                        <td>June 30</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </body>
