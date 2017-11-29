@@ -25,4 +25,10 @@ class HomeController extends Controller
     public function addfood() {
         return view('addfood');
     }
+
+    public function storeFoodInPantry() {
+        $input = Request::all();
+        return 'test';
+
+    }
 }
