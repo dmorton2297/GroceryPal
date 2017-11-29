@@ -18,3 +18,4 @@ Auth::routes();
 
 Route::get('/', 'HomeController@welcome')->name('welcome');
 Route::get('/home', 'HomeController@welcome')->name('welcome');
+Route::get('/testpallav', 'HomeController@test')->name('test');

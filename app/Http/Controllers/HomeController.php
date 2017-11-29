@@ -21,4 +21,8 @@ class HomeController extends Controller
     public function welcome() {
             return view('welcome');
     }
+    
+    public function test() {
+        return 'This is a test';
+    }
 }
