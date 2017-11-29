@@ -12,7 +12,6 @@
 	<!-- Create a header for the form -->
 	<h1 id="Header">Add food item</h1>
 
-	{!! Form::model($item, array('route' => array('FoodItem.update', $item->id))) !!}
 
 
 @stop

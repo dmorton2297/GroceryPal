@@ -8,5 +8,4 @@ class FoodItem extends Model
 {
 	// Decleration of  table name in DB
     protected $table = 'pantry';
-    protected $item;
 }
