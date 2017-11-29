@@ -1,5 +1,5 @@
-    @extends('master')
-    @section('body')
+    @extends('layouts.app')
+    @section('content')
         <div class="col-xs-6">
             <h2 class="sub-header">Grocery List</h2>
             <div class="table1">
