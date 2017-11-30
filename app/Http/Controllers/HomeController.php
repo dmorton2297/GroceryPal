@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\FoodItem;
 use Auth;
 
 class HomeController extends Controller
@@ -19,16 +21,44 @@ class HomeController extends Controller
 
 
     public function welcome() {
-            return view('welcome');
+        // We need to load all data from the FoodItem table
+        $items = FoodItem::all();
+        return view('welcome', ['items' => $items]);
     }
 
     public function addfood() {
         return view('addfood');
     }
 
-    public function storeFoodInPantry() {
-        $input = Request::all();
-        return 'test';
+    public function storeFood(Request $request) {
+        $foodItem = new FoodItem();
+        $foodItem -> item = $request->input('item');
+        $foodItem -> description = $request->input('description');
+        
+        $inPantry = $request->input('inPantry');
+        $inGroceryList = $request->input('inGroceryList');
+
+        if ($inPantry != '') {
+            $foodItem -> inPantry = true;
+        } else {
+            $foodItem -> inPantry = false;
+        }
+
+        if ($inGroceryList != '') {
+            $foodItem -> inGroceryList = true;
+        } else {
+            $foodItem -> inGroceryList = false;
+        }
+
+        $date = date('Y-m-d H:i:s');
+        $foodItem -> created_at = $date;
+        $foodItem -> updated_at = $date;
+
+        if(!$foodItem -> save()) {
+            return "An error occured here. Please reload the page and fill in all fields of the form.";
+        }
+
+        return $this->welcome();
 
     }
 }
