@@ -49,7 +49,7 @@ class HomeController extends Controller
         } else {
             $foodItem -> inGroceryList = false;
         }
-
+        // the webpage says the created at and date are automatically set ?
         $date = date('Y-m-d H:i:s');
         $foodItem -> created_at = $date;
         $foodItem -> updated_at = $date;
@@ -65,5 +65,27 @@ class HomeController extends Controller
         $foodItem = new FoodItem();
         $foodItem -> item = $request->input('item');
         $foodItem -> description = $request->input('description');
+        $inPantry = $request->input('inPantry');
+        $inGroceryList = $request->input('inGroceryList');
+        
+        // not sure if i should set any variable to true and false
+        if ($inPantry != '') {
+            $foodItem -> inPantry = true;
+        } else {
+            $foodItem -> inPantry = false;
+        }
+        
+        if ($inGroceryList != '') {
+            $foodItem -> inGroceryList = true;
+        } else {
+            $foodItem -> inGroceryList = false;
+        }
+        
+        if(!$foodItem -> delete()) {
+               return "An error occured here. Please reload the page and fill in all fields of the form.";
+        }
+        
+        return $this->welcome();
+
     }
 }
