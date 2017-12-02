@@ -61,4 +61,9 @@ class HomeController extends Controller
         return $this->welcome();
 
     }
+    public function deleteFood(Request $request) {
+        $foodItem = new FoodItem();
+        $foodItem -> item = $request->input('item');
+        $foodItem -> description = $request->input('description');
+    }
 }
