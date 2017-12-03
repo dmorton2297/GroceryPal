@@ -61,4 +61,5 @@ class HomeController extends Controller
         return $this->welcome();
 
     }
+
 }
