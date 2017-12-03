@@ -1,7 +1,5 @@
     @extends('layouts.app')
     @section('content')
-
-
         <div class="col-xs-6">
             <h2 class="sub-header">Grocery List</h2>
             <div class="table1">
@@ -10,13 +8,15 @@
                         <th>Item</th>
                         <th>Description</th>
                         <th>Date Added</th>
+                        <th>Action</th>
                     </tr>
                     @foreach ($items as $item)
                         @if ($item -> inGroceryList == true)
                              <tr>
                                 <td>{!! $item->item !!}</td>
                                 <td>{!! $item->description !!}</td>
-                                <td>{{!! $item->created_at !!}}</td>
+                                <td>{!! $item->created_at !!}</td>
+                                <td><button class="btn btn-default" id="<?php $item->id?>"></button></td>>
                              </tr>
                         @endif
                     @endforeach
@@ -29,7 +29,9 @@
                 <table class="table table-striped">
                     <tr>
                         <th>Item</th>
+                        <th>Description</th>
                         <th>Date Added</th>
+                        <th>Action</th>
                     </tr>
                      @foreach ($items as $item)
                         @if ($item -> inPantry == true)
