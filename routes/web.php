@@ -24,4 +24,4 @@ Route::post('/add_food',
   ['as' => 'food_store', 'uses' => 'HomeController@storeFood']);
 
 Route::get('/deleteFood/{id}', ['uses' => 'HomeController@deleteFood']);
-
+Route::get('/moveFood/{item}', ['uses' => 'HomeController@moveFood']);
