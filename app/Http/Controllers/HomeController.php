@@ -70,12 +70,5 @@ class HomeController extends Controller
 
 
     }
-<<<<<<< HEAD
-    
-    public function test() {
-        return 'This is a test';
-    }
-=======
 
->>>>>>> 702bac14c03cdfcdc2825532ff99a6629ef6bbad
 }

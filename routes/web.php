@@ -14,9 +14,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@welcome')->name('welcome');
 Route::get('/home', 'HomeController@welcome')->name('welcome');
-<<<<<<< HEAD
-Route::get('/testpallav', 'HomeController@test')->name('test');
-=======
+
 //Route::get('/addfood', 'HomeController@addfood')->name('addfood');
 //Route::post('/storefood', 'HomeController@storeFoodInPantry')->name('storeFoodInPantry');
 Route::get('/addfood', 
@@ -26,4 +24,4 @@ Route::post('/add_food',
   ['as' => 'food_store', 'uses' => 'HomeController@storeFood']);
 
 Route::get('/deleteFood/{id}', ['uses' => 'HomeController@deleteFood']);
->>>>>>> 702bac14c03cdfcdc2825532ff99a6629ef6bbad
+
