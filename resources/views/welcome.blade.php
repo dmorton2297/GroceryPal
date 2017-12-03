@@ -36,7 +36,7 @@
                             <th>Description</th>
                             <th>Date Added</th>
                             <th>Action</th>
-                            <th>Move</th>>
+                            <th>Move</th>
                         </tr>
                         @foreach ($items as $item)
                             @if ($item -> inGroceryList == true)
