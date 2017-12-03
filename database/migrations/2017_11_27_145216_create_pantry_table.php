@@ -13,9 +13,12 @@ class CreatePantryTable extends Migration
      */
     public function up()
     {
-        Schema::create('pantry', function (Blueprint $table) {
+        Schema::create('food', function (Blueprint $table) {
             $table->increments('id');
             $table->string('item');
+            $table->string('description');
+            $table->boolean('inPantry');
+            $table->boolean('inGroceryList');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreatePantryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pantry');
+        Schema::dropIfExists('food');
     }
 }
