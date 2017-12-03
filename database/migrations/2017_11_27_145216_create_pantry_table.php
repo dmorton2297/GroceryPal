@@ -30,6 +30,6 @@ class CreatePantryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pantry');
+        Schema::dropIfExists('food');
     }
 }

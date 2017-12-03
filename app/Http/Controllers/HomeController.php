@@ -61,8 +61,9 @@ class HomeController extends Controller
         return $this->welcome();
 
     }
+
     public function deleteFood(Request $request) {
-        $foodItem = new FoodItem();
+        /*$foodItem = new FoodItem();
         $foodItem -> item = $request->input('item');
         $foodItem -> description = $request->input('description');
         $inPantry = $request->input('inPantry');
@@ -85,7 +86,7 @@ class HomeController extends Controller
                return "An error occured here. Please reload the page and fill in all fields of the form.";
         }
         
-        return $this->welcome();
-
+        return $this->welcome();*/
     }
+
 }
