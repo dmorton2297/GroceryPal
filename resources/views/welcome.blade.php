@@ -5,7 +5,12 @@
         <script type="text/javascript">
             function deleteItem(id) {
                 window.location = '/deleteFood/' + id;
+            }
+        </script>
 
+        <script type="text/javascript">
+            function moveItem(item) {
+                window.location = '/moveFood/' + item;
             }
         </script>
 
@@ -31,18 +36,24 @@
                             <th>Description</th>
                             <th>Date Added</th>
                             <th>Action</th>
+                            <th>Move</th>>
                         </tr>
                         @foreach ($items as $item)
                             @if ($item -> inGroceryList == true)
                                  <tr>
                                     <?php 
                                         $function = 'deleteItem(\''.$item->id.'\')';
+                                        
+                                    ?>
+                                    <?php
+                                        $function2 = 'moveItem(\''.$item->id.'\')';
                                     ?>
                                     <td> {!! $item->id !!} </td>
                                     <td>{!! $item->item !!}</td>
                                     <td>{!! $item->description !!}</td>
                                     <td>{!! $item->created_at !!}</td>
                                     <td><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
+                                    <td><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                                  </tr>
                             @endif
                         @endforeach

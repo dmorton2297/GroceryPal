@@ -70,5 +70,18 @@ class HomeController extends Controller
 
 
     }
+    public function moveFood($item) {
+
+        $toMove = FoodItem::find($item);
+        if (!$toMove-> inPantry) {
+            $toMove-> inGroceryList = false;
+            $toMove-> inPantry = true;
+            $toMove -> save();
+        }
+      //  return $toMove-> inPantry;
+        //return "you have moved item";
+        return redirect()->route('welcome');
+
+    }
 
 }
