@@ -16,7 +16,9 @@ class CreatePantryTable extends Migration
         Schema::create('food', function (Blueprint $table) {
             $table->increments('id');
             $table->string('item');
+            $table->integer('userId');
             $table->string('description');
+
             $table->boolean('inPantry');
             $table->boolean('inGroceryList');
             $table->timestamps();

@@ -53,6 +53,7 @@ class HomeController extends Controller
         $date = date('Y-m-d H:i:s');
         $foodItem -> created_at = $date;
         $foodItem -> updated_at = $date;
+        $foodItem -> userId = Auth::user()->id;
 
         if(!$foodItem -> save()) {
             return "An error occured here. Please reload the page and fill in all fields of the form.";
