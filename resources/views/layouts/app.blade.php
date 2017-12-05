@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>GroceryPal</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -31,7 +31,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        GroceryPal
                     </a>
                 </div>
 
@@ -40,7 +40,7 @@
                     <ul class="nav navbar-nav">
                         @guest 
                         @else
-                            <li><a href="{{ route('addfood') }}">Add Food</a></li>
+                           <button class="btn btn-default" style="margin-top: 6px; margin-left: 5px;"><a href="{{ route('addfood') }}">Add Food</a></button>
                         @endguest
                         &nbsp;
                     </ul>
