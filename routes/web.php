@@ -25,3 +25,7 @@ Route::post('/add_food',
 
 Route::get('/deleteFood/{id}', ['uses' => 'HomeController@deleteFood']);
 Route::get('/moveFood/{item}', ['uses' => 'HomeController@moveFood']);
+
+Route::get('/test', function() {
+	return "This is a test";
+});
