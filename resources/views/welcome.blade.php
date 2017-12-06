@@ -36,7 +36,7 @@
                             <th>Description</th>
                             <th>Date Added</th>
                             <th>Action</th>
-                            <th>Move</th>
+                            <th>Transfer to Pantry</th>
                         </tr>
                         @foreach ($items as $item)
                             @if ($item -> inGroceryList == true && $item -> userId == Auth::user()->id)
@@ -52,7 +52,7 @@
                                     <td>{!! $item->item !!}</td>
                                     <td>{!! $item->description !!}</td>
                                     <td>{!! $item->created_at !!}</td>
-                                    <td><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
+                                    <td><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
                                     <td><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                                  </tr>
                             @endif
@@ -81,7 +81,7 @@
                                     <td>{!! $item->item !!}</td>
                                     <td>{!! $item->description !!}</td>
                                     <td>{{!! $item->created_at !!}}</td>
-                                     <td><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
+                                     <td><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
                                  </tr>
                             @endif
                         @endforeach
@@ -111,6 +111,7 @@
                                 <td>{!! $item->description !!}</td>
                                 <td>{!! $item->created_at !!}</td>
                                 <td><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
+                                <td><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
                              </tr>
                         @endif
                     @endforeach
