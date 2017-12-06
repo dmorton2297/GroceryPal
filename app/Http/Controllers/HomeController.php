@@ -97,7 +97,7 @@ class HomeController extends Controller
 
 
     }
-    public function moveFood($item) {
+    public function moveFood($item, $pageLayout) {
 
         $toMove = FoodItem::find($item);
         if (!$toMove-> inPantry) {
@@ -105,10 +105,15 @@ class HomeController extends Controller
             $toMove-> inPantry = true;
             $toMove -> save();
         }
+
+	if ($pageLayout == 0) {
+		return redirect()->route('welcomeStacked');
+	}
+	else {
       //  return $toMove-> inPantry;
         //return "you have moved item";
-        return redirect()->route('welcome');
-
+        	return redirect()->route('welcome');
+	}
     }
 
     public function map() {
