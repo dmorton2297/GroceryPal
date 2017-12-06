@@ -46,6 +46,7 @@
                         @guest 
                         @else
                            <button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;"><a href="{{ route('addfood') }}">Add Food</a></button>
+                           <button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;"><a href="{{ route('map') }}">Find Restaurant</a></button>
                         @endguest
                         &nbsp;
                     </ul>
