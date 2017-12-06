@@ -109,6 +109,10 @@ class HomeController extends Controller
         return view('map');
     }
 
+    public function about() {
+        return view('about');
+    }
+
     
 
 }

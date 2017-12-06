@@ -29,3 +29,5 @@ Route::get('/moveFood/{item}', ['uses' => 'HomeController@moveFood']);
 
 Route::get('/map', 'HomeController@map')->name('map');
 
+Route::get('/about', 'HomeController@about')->name('about');
+
