@@ -19,6 +19,9 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function index() {
+        return redirect()->route('welcome');
+    }
 
     public function welcome() {
         // We need to load all data from the FoodItem table
