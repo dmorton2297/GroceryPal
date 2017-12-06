@@ -10,6 +10,12 @@
 
 
 @section('content')
+
+	@if($message != '') 
+		<script type="text/javascript">
+			alert("An error ocured. Please make sure either Grocery List or Pantry is selected (not both).")
+		</script>
+	@endif
 	<!-- Create a header for the form -->
 	<h1 id="Header">Add food item</h1>
 

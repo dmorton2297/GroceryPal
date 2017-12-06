@@ -6,7 +6,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\FoodItem;
 use Auth;
-use Mapper;
 
 class HomeController extends Controller
 {
@@ -28,7 +27,11 @@ class HomeController extends Controller
     }
 
     public function addfood() {
-        return view('addfood');
+        return view('addfood', ['message'=>'']);
+    }
+
+    public function addFoodPresentMessage($message) {
+         return view('addfood', ['message'=>$message]);
     }
 
     public function storeFood(Request $request) {
@@ -50,6 +53,15 @@ class HomeController extends Controller
         } else {
             $foodItem -> inGroceryList = false;
         }
+
+
+
+        if ($inGroceryList == '' && $inPantry == '') {
+            return $this -> addFoodPresentMessage("Error on this project");
+        } else if ($inGroceryList != '' && $inPantry != '') {
+            return $this -> addFoodPresentMessage("Error on this project");
+        }
+        
         // the webpage says the created at and date are automatically set ?
         $date = date('Y-m-d H:i:s');
         $foodItem -> created_at = $date;
@@ -67,7 +79,9 @@ class HomeController extends Controller
     public function deleteFood($id) {
 
         $toDelete = FoodItem::find($id);
-        $toDelete -> delete();
+        if ($toDelete) {
+            $toDelete -> delete();
+        }
         return redirect()->route('welcome');
 
 
@@ -87,8 +101,6 @@ class HomeController extends Controller
     }
 
     public function map() {
-
-        Mapper::map(53.381128999999990000, -1.470085000000040000);
         return view('map');
     }
 
