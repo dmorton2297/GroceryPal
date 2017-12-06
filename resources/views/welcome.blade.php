@@ -112,7 +112,7 @@
                                 <td>{!! $item->description !!}</td>
                                 <td>{!! $item->created_at !!}</td>
                                 <td><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
-                                <td><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
+                                <td><button class="btn btn-danger" onClick="<?php echo $function2; ?>">Move</button></td>
                              </tr>
                         @endif
                     @endforeach
