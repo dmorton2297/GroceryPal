@@ -98,17 +98,22 @@
                             <th>Description</th>
                             <th>Date Added</th>
                             <th>Delete</th>
+			    <th>Move to List</th>
                         </tr>
                          @foreach ($items as $item)
                             @if ($item -> inPantry == true && $item -> userId == Auth::user()->id)
                                  <tr id="row">
                                     <?php 
                                         $function = 'deleteItem(\''.$item->id.'\')';
+					$function2 = 'moveItem(\''.$item->id.'\')';
                                     ?>
+					
+
                                     <td id="col">{!! $item->item !!}</td>
                                     <td id="col">{!! $item->description !!}</td>
                                     <td id="col">{{!! $item->created_at !!}}</td>
                                     <td id="col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
+				    <td><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                                  </tr>
                             @endif
                         @endforeach
@@ -154,17 +159,20 @@
                         <th>Description</th>
                         <th>Date Added</th>
                         <th>Delete</th>
+			<th>Move to List</th>
                     </tr>
                      @foreach ($items as $item)
                         @if ($item -> inPantry == true && $item -> userId == Auth::user()->id)
                              <tr id="row">
                                 <?php 
                                     $function = 'deleteItem(\''.$item->id.'\')';
+				    $function2 = 'moveItem(\''.$item->id.'\')';
                                 ?>
                                 <td id="col">{!! $item->item !!}</td>
                                 <td id="col">{!! $item->description !!}</td>
-                                <td id="col">{{!! $item->created_at !!}}</td>
+                                <td id="col">{!! $item->created_at !!}</td>
                                  <td id="col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
+				<td id = "col"><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                              </tr>
                         @endif
                     @endforeach
