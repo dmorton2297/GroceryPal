@@ -8,7 +8,6 @@
                 if (php_var == '') {
                     php_var = 0;
                 }
-                alert(php_var);
                 window.location = '/deleteFood/' + id + '/' + php_var;
             }
         </script>
