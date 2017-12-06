@@ -107,7 +107,11 @@ class HomeController extends Controller
             $toMove-> inGroceryList = false;
             $toMove-> inPantry = true;
             $toMove -> save();
-        }
+        } else {
+		$toMove-> inGroceryList = true;
+		$toMove-> inPantry = false;
+		$toMove-> save();
+	}
 
 	if ($pageLayout == 0) {
 		return redirect()->route('welcome');
