@@ -1,5 +1,5 @@
 #Header {
-			padding-left: 100px;
+			padding-left: 40px;
 }
 
 #cancel-button {
@@ -7,8 +7,8 @@
 }
 
 .form-group {
-	padding-left: 100px;
-	padding-right: 100px;
+	width: 75%;
+	padding-left: 20px;
 }
 
 #mobile {
