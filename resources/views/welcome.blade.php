@@ -15,16 +15,39 @@
         </script>
 
         <script type="text/javascript">
+          
             function onload() {
+                var php_var = "<?php echo $stacked; ?>";
                 if ($(window).width() < 960) {
                     document.getElementById('normal').style.display = 'none';
+                    document.getElementById('stack-control').style.display = 'none';
+                    document.getElementById('normal-control').style.display = 'none';
+
+                } else if (php_var == "1") {
+                    document.getElementById('normal').style.display = 'none';
+                    document.getElementById('stack-control').style.display = 'none';
+
                 } else {
                     document.getElementById('mobile').style.display = 'none';
+                    document.getElementById('normal-control').style.display = 'none';
+
                 }
 
              }
         </script>
 
+   
+
+        <div class="row">
+            <div class="col-md-1" id="stack-control">
+                <button class="btn btn-default"><a href="{{ route('welcomeStacked') }}">Stacked</a></button>
+            </div>
+             <div class="col-md-1" id="normal-control">
+                <button class="btn btn-default"><a href="{{ route('welcome') }}">Normal</a></button>
+            </div>
+        </div>
+
+        
         <div id="normal">
             <div class="col-xs-6">
                 <h2 class="sub-header">Grocery List</h2>
@@ -133,7 +156,7 @@
                                 <td id="col">{!! $item->item !!}</td>
                                 <td id="col">{!! $item->description !!}</td>
                                 <td id="col">{{!! $item->created_at !!}}</td>
-                                 <td id="col"><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
+                                 <td id="col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
                              </tr>
                         @endif
                     @endforeach

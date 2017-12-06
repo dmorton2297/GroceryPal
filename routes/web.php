@@ -14,6 +14,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@welcome')->name('welcome');
 Route::get('/home', 'HomeController@welcome')->name('welcome');
+route::get('/welcomeStacked', 'HomeController@welcomeStacked')->name('welcomeStacked');
 
 //Route::get('/addfood', 'HomeController@addfood')->name('addfood');
 //Route::post('/storefood', 'HomeController@storeFoodInPantry')->name('storeFoodInPantry');

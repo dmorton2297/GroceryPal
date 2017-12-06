@@ -23,7 +23,12 @@ class HomeController extends Controller
     public function welcome() {
         // We need to load all data from the FoodItem table
         $items = FoodItem::all();
-        return view('welcome', ['items' => $items]);
+        return view('welcome', ['items' => $items, 'stacked' => false]);
+    }
+
+    public function welcomeStacked() {
+         $items = FoodItem::all();
+        return view('welcome', ['items' => $items, 'stacked' => true]);
     }
 
     public function addfood() {
@@ -103,5 +108,7 @@ class HomeController extends Controller
     public function map() {
         return view('map');
     }
+
+    
 
 }
