@@ -110,12 +110,12 @@ class HomeController extends Controller
         }
 
 	if ($pageLayout == 0) {
-		return redirect()->route('welcomeStacked');
+		return redirect()->route('welcome');
 	}
 	else {
       //  return $toMove-> inPantry;
         //return "you have moved item";
-        	return redirect()->route('welcome');
+        	return redirect()->route('welcomeStacked');
 	}
     }
 
