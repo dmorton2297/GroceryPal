@@ -29,7 +29,7 @@
             <div class="col-xs-6">
                 <h2 class="sub-header">Grocery List</h2>
                 <div class="table1">
-                    <table class="table table-striped">
+                    <table class="table table-striped" id = "table">
                         <tr>
                             <th>Item</th>
                             <th>Description</th>
@@ -39,7 +39,7 @@
                         </tr>
                         @foreach ($items as $item)
                             @if ($item -> inGroceryList == true && $item -> userId == Auth::user()->id)
-                                 <tr>
+                                 <tr id="row">
                                     <?php 
                                         $function = 'deleteItem(\''.$item->id.'\')';
                                         
@@ -47,10 +47,10 @@
                                     <?php
                                         $function2 = 'moveItem(\''.$item->id.'\')';
                                     ?>
-                                    <td>{!! $item->item !!}</td>
-                                    <td>{!! $item->description !!}</td>
-                                    <td>{!! $item->created_at !!}</td>
-                                    <td><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
+                                    <td id="col">{!! $item->item !!}</td>
+                                    <td id="col">{!! $item->description !!}</td>
+                                    <td id="col">{!! $item->created_at !!}</td>
+                                    <td id="col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
                                     <td><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                                  </tr>
                             @endif
@@ -61,7 +61,7 @@
              <div class="col-xs-6">
                 <h2 class="sub-header">Current Pantry</h2>
                 <div class="table2">
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="table">
                         <tr>
                             <th>Item</th>
                             <th>Description</th>
@@ -70,14 +70,14 @@
                         </tr>
                          @foreach ($items as $item)
                             @if ($item -> inPantry == true && $item -> userId == Auth::user()->id)
-                                 <tr>
+                                 <tr id="row">
                                     <?php 
                                         $function = 'deleteItem(\''.$item->id.'\')';
                                     ?>
-                                    <td>{!! $item->item !!}</td>
-                                    <td>{!! $item->description !!}</td>
-                                    <td>{{!! $item->created_at !!}}</td>
-                                     <td><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
+                                    <td id="col">{!! $item->item !!}</td>
+                                    <td id="col">{!! $item->description !!}</td>
+                                    <td id="col">{{!! $item->created_at !!}}</td>
+                                    <td id="col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
                                  </tr>
                             @endif
                         @endforeach
@@ -87,8 +87,8 @@
         </div>
 
         <div id="mobile">
-         <h2 class="sub-header">Grocery List</h2>
-        <table class="table table-striped">
+         <h2 class="sub-header" id="Header">Grocery List</h2>
+        <table class="table table-striped" id="table">
                     <tr>
                         <th>Item</th>
                         <th>Description</th>
@@ -98,7 +98,7 @@
                     </tr>
                     @foreach ($items as $item)
                         @if ($item -> inGroceryList == true && $item -> userId == Auth::user()->id )
-                             <tr>
+                             <tr id="row">
                                 <?php 
                                     $function = 'deleteItem(\''.$item->id.'\')';
                                 ?>
@@ -106,18 +106,18 @@
                                 <?php
                                         $function2 = 'moveItem(\''.$item->id.'\')';
                                     ?>
-                                <td>{!! $item->item !!}</td>
-                                <td>{!! $item->description !!}</td>
-                                <td>{!! $item->created_at !!}</td>
-                                <td><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
-                                <td><button class="btn btn-danger" onClick="<?php echo $function2; ?>">Move</button></td>
+                                <td id = "col">{!! $item->item !!}</td>
+                                <td id = "col">{!! $item->description !!}</td>
+                                <td id = "col">{!! $item->created_at !!}</td>
+                                <td id = "col"><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
+                                <td id = "col"><button class="btn btn-danger" onClick="<?php echo $function2; ?>">Move</button></td>
                              </tr>
                         @endif
                     @endforeach
             </table>
 
-            <h2 class="sub-header">Current Pantry</h2>
-            <table class="table table-striped">
+            <h2 class="sub-header" id="Header">Current Pantry</h2>
+            <table class="table table-striped" id="table">
                     <tr>
                         <th>Item</th>
                         <th>Description</th>
@@ -126,14 +126,14 @@
                     </tr>
                      @foreach ($items as $item)
                         @if ($item -> inPantry == true && $item -> userId == Auth::user()->id)
-                             <tr>
+                             <tr id="row">
                                 <?php 
                                     $function = 'deleteItem(\''.$item->id.'\')';
                                 ?>
-                                <td>{!! $item->item !!}</td>
-                                <td>{!! $item->description !!}</td>
-                                <td>{{!! $item->created_at !!}}</td>
-                                 <td><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
+                                <td id="col">{!! $item->item !!}</td>
+                                <td id="col">{!! $item->description !!}</td>
+                                <td id="col">{{!! $item->created_at !!}}</td>
+                                 <td id="col"><button class="btn btn-default" onClick="<?php echo $function; ?>">Remove</button></td>
                              </tr>
                         @endif
                     @endforeach

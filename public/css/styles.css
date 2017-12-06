@@ -1,5 +1,5 @@
 #Header {
-			padding-left: 100px;
+			padding-left: 30px;
 }
 
 #cancel-button {
@@ -12,5 +12,19 @@
 }
 
 #mobile {
-	padding-left: 20px;
+	padding-left: 0px;
+}
+
+#table {
+	background-color: #CFD8DC
+
+
+}
+
+#col {
+	color: black;
+}
+
+#row {
+	background-color: #CFD8DC
 }
