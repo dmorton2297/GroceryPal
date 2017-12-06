@@ -42,5 +42,5 @@
 	</div>
 
 	<h2 id="Header">Technologies Used</h2>
-	<p style="margin-left: 30px;">This applocation was written using PHP 7 and the Laravel framework. You can read about laravel here: <a href="https://laravel.com">Link</a>. A MYSQL database is used for data continuity. This website is hosted using Laravel Forge (<a href="https://forge.laravel.com">Link</a>) utilizing an Amazon AWS EC2 instance.</p>
+	<p style="margin-left: 30px; margin-bottom: 50px;">This applocation was written using PHP 7 and the Laravel framework. You can read about laravel here: <a href="https://laravel.com">Link</a>. A MYSQL database is used for data continuity. This website is hosted using Laravel Forge (<a href="https://forge.laravel.com">Link</a>) utilizing an Amazon AWS EC2 instance.</p>
 @stop
