@@ -27,7 +27,7 @@
 
         <div id="normal">
             <div class="col-xs-6">
-                <h2 class="sub-header">Grocery List</h2>
+                <h2 class="sub-header">Hey Blake</h2>
                 <div class="table1">
                     <table class="table table-striped">
                         <tr>
