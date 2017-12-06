@@ -81,13 +81,19 @@ class HomeController extends Controller
 
     }
 
-    public function deleteFood($id) {
+    public function deleteFood($id, $pageLayout) {
 
         $toDelete = FoodItem::find($id);
         if ($toDelete) {
             $toDelete -> delete();
         }
-        return redirect()->route('welcome');
+
+        if ($pageLayout == 0) {
+            return redirect()->route('welcome');
+        } else {
+            return redirect()->route('welcomeStacked');
+        }
+        
 
 
     }

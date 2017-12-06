@@ -4,13 +4,22 @@
 
         <script type="text/javascript">
             function deleteItem(id) {
-                window.location = '/deleteFood/' + id;
+                var php_var = "<?php echo $stacked; ?>";
+                if (php_var == '') {
+                    php_var = 0;
+                }
+                alert(php_var);
+                window.location = '/deleteFood/' + id + '/' + php_var;
             }
         </script>
 
         <script type="text/javascript">
             function moveItem(item) {
-                window.location = '/moveFood/' + item;
+                var php_var = "<?php echo $stacked; ?>";
+                if (php_var == '') {
+                    php_var = 0;
+                }
+                window.location = '/moveFood/' + item + '/' + php_var;
             }
         </script>
 
@@ -132,7 +141,7 @@
                                 <td id = "col">{!! $item->item !!}</td>
                                 <td id = "col">{!! $item->description !!}</td>
                                 <td id = "col">{!! $item->created_at !!}</td>
-                                <td id = "col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
+                                <td id = "col"><button class="btn btn-danger/" onClick="<?php echo $function; ?>">Remove</button></td>
                                 <td id = "col"><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                              </tr>
                         @endif
