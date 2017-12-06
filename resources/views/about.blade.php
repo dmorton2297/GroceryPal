@@ -8,7 +8,7 @@
 	<ul>
 		<li>Ability to have multiple users</li>
 		<li>Ability to add food to a virtual grocerylist and pantry</li>
-		<li>Ability to move food from virtual grocerylist to pantry.</li>
+		<li>Ability to move food from virtual grocerylist to pantry and vice versa</li>
 		<li>Ability to remove food from virtual grocerylist and pantry</li>
 		<li>Ability to toggle between 'stacked' and 'normal' view on dashboard</li>
 		<li>Ability to locate restaurants near by</li>
@@ -29,7 +29,7 @@
 
 			    <tr id="row">
 			    	<td id="col">Joey Singer</td> 
-			    	<td id="col">joeysinger7@gmail.com</td> 
+			    	<td id="col">singer6@purdue.edu</td> 
 			    </tr>
 
 			    <tr id="row">
