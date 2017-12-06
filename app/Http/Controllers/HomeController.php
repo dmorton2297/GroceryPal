@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\FoodItem;
 use Auth;
+use Mapper;
 
 class HomeController extends Controller
 {
@@ -83,6 +84,12 @@ class HomeController extends Controller
         //return "you have moved item";
         return redirect()->route('welcome');
 
+    }
+
+    public function map() {
+
+        Mapper::map(53.381128999999990000, -1.470085000000040000);
+        return view('map');
     }
 
 }

@@ -15,6 +15,9 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    @yield('head')
+
     
 </head>
 <body>
@@ -42,7 +45,7 @@
                     <ul class="nav navbar-nav">
                         @guest 
                         @else
-                           <button class="btn btn-default" style="margin-top: 6px; margin-left: 5px;"><a href="{{ route('addfood') }}">Add Food</a></button>
+                           <button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;"><a href="{{ route('addfood') }}">Add Food</a></button>
                         @endguest
                         &nbsp;
                     </ul>

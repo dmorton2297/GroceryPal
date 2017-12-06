@@ -26,3 +26,5 @@ Route::post('/add_food',
 Route::get('/deleteFood/{id}', ['uses' => 'HomeController@deleteFood']);
 Route::get('/moveFood/{item}', ['uses' => 'HomeController@moveFood']);
 
+Route::get('/map', 'HomeController@map')->name('map');
+

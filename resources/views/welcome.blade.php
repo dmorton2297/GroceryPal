@@ -102,6 +102,10 @@
                                 <?php 
                                     $function = 'deleteItem(\''.$item->id.'\')';
                                 ?>
+
+                                <?php
+                                        $function2 = 'moveItem(\''.$item->id.'\')';
+                                    ?>
                                 <td>{!! $item->item !!}</td>
                                 <td>{!! $item->description !!}</td>
                                 <td>{!! $item->created_at !!}</td>
