@@ -27,7 +27,7 @@
 
         <div id="normal">
             <div class="col-xs-6">
-                <h2 class="sub-header">Hey Blake</h2>
+                <h2 class="sub-header">Grocery List</h2>
                 <div class="table1">
                     <table class="table table-striped">
                         <tr>
@@ -97,7 +97,7 @@
                         <th>Move to Pantry</th>
                     </tr>
                     @foreach ($items as $item)
-                        @if ($item -> inGroceryList == true && $item -> userId == Auth::user()->id)
+                        @if ($item -> inGroceryList == true && $item -> userId == Auth::user()->id )
                              <tr>
                                 <?php 
                                     $function = 'deleteItem(\''.$item->id.'\')';
