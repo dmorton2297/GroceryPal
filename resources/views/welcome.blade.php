@@ -35,8 +35,8 @@
                             <th>Item</th>
                             <th>Description</th>
                             <th>Date Added</th>
-                            <th>Action</th>
-                            <th>Transfer to Pantry</th>
+                            <th>Delete</th>
+                            <th>Move to Pantry</th>
                         </tr>
                         @foreach ($items as $item)
                             @if ($item -> inGroceryList == true && $item -> userId == Auth::user()->id)
@@ -69,7 +69,7 @@
                             <th>Item</th>
                             <th>Description</th>
                             <th>Date Added</th>
-                            <th>Action</th>
+                            <th>Delete</th>
                         </tr>
                          @foreach ($items as $item)
                             @if ($item -> inPantry == true && $item -> userId == Auth::user()->id)
@@ -98,7 +98,8 @@
                         <th>Item</th>
                         <th>Description</th>
                         <th>Date Added</th>
-                        <th>Action</th>
+                        <th>Delete</th>
+                        <th>Move to Pantry</th>
                     </tr>
                     @foreach ($items as $item)
                         @if ($item -> inGroceryList == true)
@@ -124,7 +125,7 @@
                         <th>Item</th>
                         <th>Description</th>
                         <th>Date Added</th>
-                        <th>Action</th>
+                        <th>Delete</th>
                     </tr>
                      @foreach ($items as $item)
                         @if ($item -> inPantry == true)
