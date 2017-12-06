@@ -140,7 +140,7 @@
                                 <td id = "col">{!! $item->item !!}</td>
                                 <td id = "col">{!! $item->description !!}</td>
                                 <td id = "col">{!! $item->created_at !!}</td>
-                                <td id = "col"><button class="btn btn-danger/" onClick="<?php echo $function; ?>">Remove</button></td>
+                                <td id = "col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
                                 <td id = "col"><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                              </tr>
                         @endif
