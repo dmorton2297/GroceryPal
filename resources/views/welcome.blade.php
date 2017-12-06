@@ -97,7 +97,7 @@
                         <th>Move to Pantry</th>
                     </tr>
                     @foreach ($items as $item)
-                        @if ($item -> inGroceryList == true)
+                        @if ($item -> inGroceryList == true && $item -> userId == Auth::user()->id)
                              <tr>
                                 <?php 
                                     $function = 'deleteItem(\''.$item->id.'\')';
@@ -125,7 +125,7 @@
                         <th>Delete</th>
                     </tr>
                      @foreach ($items as $item)
-                        @if ($item -> inPantry == true)
+                        @if ($item -> inPantry == true && $item -> userId == Auth::user()->id)
                              <tr>
                                 <?php 
                                     $function = 'deleteItem(\''.$item->id.'\')';
