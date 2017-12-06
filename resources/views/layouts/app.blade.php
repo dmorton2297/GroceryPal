@@ -90,6 +90,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
-   <div class="footer">This project was created for <strong>CS252 Systems Programming Fall 2017</strong></div>
+   <div class="footer"><strong>CS252 Systems Programming Fall 2017</strong></div>
 </body>
 </html>
