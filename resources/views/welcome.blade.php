@@ -24,7 +24,6 @@
 
         <script type="text/javascript">
             function rowclicked(id) {
-                alert("happening")
                 window.location = '/updateFood/'+id;
             }
         </script>
