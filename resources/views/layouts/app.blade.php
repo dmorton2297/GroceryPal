@@ -45,9 +45,9 @@
                     <ul class="nav navbar-nav">
                         @guest 
                         @else
-                           <button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;"><a href="{{ route('addfood') }}">Add Food</a></button>
-                           <button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;"><a href="{{ route('map') }}">Find Restaurant</a></button>
-                           <button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;"><a href="{{ route('about') }}">About</a></button>
+                           <a href="{{ route('addfood') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Add Food</button></a>
+                           <a href="{{ route('map') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">Find Restaurant</button></a>
+                           <a href="{{ route('about') }}"><button class="btn btn-default" style="margin-top: 7px; margin-left: 5px;">About</button></a>
                         @endguest
                         &nbsp;
                     </ul>
