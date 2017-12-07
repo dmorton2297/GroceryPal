@@ -65,9 +65,11 @@ class HomeController extends Controller
 
 
         if ($inGroceryList == '' && $inPantry == '') {
-            return $this -> addFoodPresentMessage("Error on this project");
+            return $this -> addFoodPresentMessage("Select an item to be in grocery list or pantry.");
         } else if ($inGroceryList != '' && $inPantry != '') {
-            return $this -> addFoodPresentMessage("Error on this project");
+            return $this -> addFoodPresentMessage("An item cannot be in both grocery list and pantry.");
+        } else if ($foodItem -> item == '' || $foodItem -> description == '') {
+            return $this -> addFoodPresentMessage('One of the required field (Item name and Item description) has not been filled out.');
         }
         
         // the webpage says the created at and date are automatically set ?
@@ -108,19 +110,69 @@ class HomeController extends Controller
             $toMove-> inPantry = true;
             $toMove -> save();
         } else {
-		$toMove-> inGroceryList = true;
-		$toMove-> inPantry = false;
-		$toMove-> save();
-	}
+            $toMove-> inGroceryList = true;
+            $toMove-> inPantry = false;
+            $toMove-> save();
+        }
 
-	if ($pageLayout == 0) {
-		return redirect()->route('welcome');
-	}
-	else {
-      //  return $toMove-> inPantry;
-        //return "you have moved item";
-        	return redirect()->route('welcomeStacked');
-	}
+    	if ($pageLayout == 0) {
+    		return redirect()->route('welcome');
+    	}
+    	else {
+            	return redirect()->route('welcomeStacked');
+    	}
+    }
+
+    public function updateFood($id) {
+        $toUpdate = FoodItem::find($id);
+        return view('updateFood', ['item' => $toUpdate, 'message' => '']);
+    }
+
+     public function updateFoodPresentMessage($id, $message) {
+        $toUpdate = FoodItem::find($id);
+         return view('updateFood', ['item' => $toUpdate, 'message' => $message]);
+    }
+
+    public function finishFoodUpdate(Request $request) {
+        $foodItem = FoodItem::find($request -> input('id'));
+        $foodItem -> item = $request->input('item');
+        $foodItem -> description = $request->input('description');
+        
+        $inPantry = $request->input('inPantry');
+        $inGroceryList = $request->input('inGroceryList');
+
+        if ($inPantry != '') {
+            $foodItem -> inPantry = true;
+        } else {
+            $foodItem -> inPantry = false;
+        }
+
+        if ($inGroceryList != '') {
+            $foodItem -> inGroceryList = true;
+        } else {
+            $foodItem -> inGroceryList = false;
+        }
+
+
+
+        if ($inGroceryList == '' && $inPantry == '') {
+            return $this -> updateFoodPresentMessage($foodItem -> id, "Error on this project");
+        } else if ($inGroceryList != '' && $inPantry != '') {
+            return $this -> updateFoodPresentMessage($foodItem -> id, "Error on this project");
+        } else if ($foodItem -> item == '' || $foodItem -> description == '') {
+            return $this -> updateFoodPresentMessage($foodItem -> id, 'One of the required field (Item name and Item description) has not been filled out.');
+        }
+        
+        // the webpage says the created at and date are automatically set ?
+        $date = date('Y-m-d H:i:s');
+        $foodItem -> created_at = $date;
+        $foodItem -> updated_at = $date;
+        $foodItem -> userId = Auth::user()->id;
+
+        if(!$foodItem -> update()) {
+            return "An error occured here. Please reload the page and fill in all fields of the form.";
+        }
+        return redirect() -> route('welcome');
     }
 
     public function map() {

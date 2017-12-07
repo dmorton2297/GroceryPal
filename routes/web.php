@@ -35,3 +35,6 @@ Route::get('/about', 'HomeController@about')->name('about');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/updateFood/{id}', 'HomeController@updateFood')->name('updateFood');
+Route::post('/update_food', ['as' => 'update_food', 'uses' => 'HomeController@finishFoodUpdate']);

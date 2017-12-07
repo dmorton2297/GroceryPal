@@ -23,6 +23,13 @@
         </script>
 
         <script type="text/javascript">
+            function rowclicked(id) {
+                alert("happening")
+                window.location = '/updateFood/'+id;
+            }
+        </script>
+
+        <script type="text/javascript">
           
             function onload() {
                 var php_var = "<?php echo $stacked; ?>";
@@ -78,9 +85,9 @@
                                     <?php
                                         $function2 = 'moveItem(\''.$item->id.'\')';
                                     ?>
-                                    <td id="col">{!! $item->item !!}</td>
-                                    <td id="col">{!! $item->description !!}</td>
-                                    <td id="col">{!! $item->created_at !!}</td>
+                                    <td id="col"  onClick="rowclicked({!! $item->id !!})">{!! $item->item !!}</td>
+                                    <td id="col"  onClick="rowclicked({!! $item->id !!})">{!! $item->description !!}</td>
+                                    <td id="col"  onClick="rowclicked({!! $item->id !!})">{!! $item->created_at !!}</td>
                                     <td id="col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
                                     <td><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                                  </tr>
@@ -109,9 +116,9 @@
                                     ?>
 					
 
-                                    <td id="col">{!! $item->item !!}</td>
-                                    <td id="col">{!! $item->description !!}</td>
-                                    <td id="col">{{!! $item->created_at !!}}</td>
+                                    <td id="col"  onClick="rowclicked({!! $item->id !!})">{!! $item->item !!}</td>
+                                    <td id="col" onClick="rowclicked({!! $item->id !!})">{!! $item->description !!}</td>
+                                    <td id="col" onClick="rowclicked({!! $item->id !!})">{{!! $item->created_at !!}}</td>
                                     <td id="col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
 				    <td><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                                  </tr>
@@ -142,9 +149,9 @@
                                 <?php
                                         $function2 = 'moveItem(\''.$item->id.'\')';
                                     ?>
-                                <td id = "col">{!! $item->item !!}</td>
-                                <td id = "col">{!! $item->description !!}</td>
-                                <td id = "col">{!! $item->created_at !!}</td>
+                                <td id = "col" onClick="rowclicked({!! $item->id !!})">{!! $item->item !!}</td>
+                                <td id = "col" onClick="rowclicked({!! $item->id !!})">{!! $item->description !!}</td>
+                                <td id = "col" onClick="rowclicked({!! $item->id !!})">{!! $item->created_at !!}</td>
                                 <td id = "col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
                                 <td id = "col"><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                              </tr>
@@ -168,9 +175,9 @@
                                     $function = 'deleteItem(\''.$item->id.'\')';
 				    $function2 = 'moveItem(\''.$item->id.'\')';
                                 ?>
-                                <td id="col">{!! $item->item !!}</td>
-                                <td id="col">{!! $item->description !!}</td>
-                                <td id="col">{!! $item->created_at !!}</td>
+                                <td id="col" onClick="rowclicked({!! $item->id !!})">{!! $item->item !!}</td>
+                                <td id="col" onClick="rowclicked({!! $item->id !!})">{!! $item->description !!}</td>
+                                <td id="col" onClick="rowclicked({!! $item->id !!})">{!! $item->created_at !!}</td>
                                  <td id="col"><button class="btn btn-danger" onClick="<?php echo $function; ?>">Remove</button></td>
 				<td id = "col"><button class="btn btn-default" onClick="<?php echo $function2; ?>">Move</button></td>
                              </tr>
