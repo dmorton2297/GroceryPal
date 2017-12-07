@@ -7,7 +7,8 @@
 	<p style="margin-left: 30px;">This application is meant to be a simple grocery list utility. It implements the following features.</p>
 	<ul>
 		<li>Ability to have multiple users</li>
-		<li>Ability to add food to a virtual grocerylist and pantry</li>
+		<li>Ability to add food to a virtual grocery list and pantry</li>
+		<li>Ability to update food in grocery list and pantry</li>
 		<li>Ability to move food from virtual grocerylist to pantry and vice versa</li>
 		<li>Ability to remove food from virtual grocerylist and pantry</li>
 		<li>Ability to toggle between 'stacked' and 'normal' view on dashboard</li>
